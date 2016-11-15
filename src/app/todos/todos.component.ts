@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TodosService } from '../todos.service';
 
 @Component({
   selector: 'app-todos',
@@ -8,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class TodosComponent implements OnInit {
   todos;
   texto;
-  constructor() { }
+  constructor(private  todoService: TodosService) {
+
+   }
 
   ngOnInit() {
-this.todos = [
+    this.todos = this.todoService.getTodos();
+    /*
+  this.todos = [
   {
     text: 'Primer texto'
   },
@@ -22,14 +27,16 @@ this.todos = [
     text: 'Tercer texto'
   }
   ];
+  */
   }
   addText(){
     console.log(this.texto);
-    this.todos.push(
-      {
+    var newTodo= {
         text: this.texto
-      });
-      this.texto = "";
+     }
+     this.todos.push(newTodo);
+    //this.todoService.addTodos(newTodo);
+    this.texto = '';
   }
    deleteText(textoTodo){
     console.log(textoTodo);

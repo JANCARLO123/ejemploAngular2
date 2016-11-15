@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
-import { TodosComponent } from './todos/todos.component';
+import { TodosService } from './todos.service';
+
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [TodosService]
+
 })
 export class AppComponent {
-  title = 'Hola mundo Angular 2!';
+  private title : string = 'Hola mundo Angular 2!';
 }

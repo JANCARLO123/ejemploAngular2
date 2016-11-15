@@ -8,12 +8,9 @@ import { TodosComponent } from './todos/todos.component';
 
 @NgModule({
   declarations: [AppComponent, TodosComponent],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
-  ],
-  providers: [],
+  imports: [BrowserModule, FormsModule, HttpModule],
+ // providers: [TodoService],
+ // directives: [TodosComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -35,7 +35,7 @@ export class TodosComponent implements OnInit {
         text: this.texto
      }
      this.todos.push(newTodo);
-    //this.todoService.addTodos(newTodo);
+    //this.todoService.addTodos(newTodo);  
     this.texto = '';
   }
    deleteText(textoTodo){
